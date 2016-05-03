@@ -2,13 +2,24 @@
 
 The motivation is to better understand memory behaviour with Node applications - in particular when the memory limit of the machine is reached such as on Heroku.
 
+This allows us to experiments with the following different parameters in the `make run` task (see [Makefile](./Makefile)):
+
+* Node:
+	* `--max_semi_space_size`
+	* `--max_old_space_size`
+	* `--max_executable_size`
+
+* Machine:
+	* physical memory (Docker's `--memory`)
+	* virtual memory (Docker's `--memory-swap`)
+
 # Getting Started
 
 ## Docker
 
 This uses Docker to setup a machine with memory constraints to test.
 
-If not already setup:
+If VirtualBox and Docker are not already setup on your computer, for the Mac:
 
 ```sh
 brew cask install virtualbox
@@ -31,7 +42,7 @@ docker-machine env dev
 
 which will detect the shell used and tell you what command to run.
 
-Finally, build the image:
+Finally build the image:
 
 ```sh
 make build
