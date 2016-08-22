@@ -65,6 +65,12 @@ make run
 
 That will run a number of different machine configuration and Node memory settings.  Some running fine, some running faster than others, and some getting killed for exceeding memory constraints.
 
+## Node version
+
+The latest Node version is used.
+
+You can specify a Node version to use at the top line in the [Dockerfile](./Dockerfile) and then build again. See Docker's [list of available Node versions](https://hub.docker.com/_/node/).
+
 ## Notes
 
 I'd pay particular attention to [this comment](https://github.com/nodejs/node/issues/3370#issuecomment-158521878) on GitHub:
