@@ -1,6 +1,6 @@
 # Motivation
 
-The motivation is to better understand memory behaviour with Node applications - in particular when the memory limit of the machine is reached such as on Heroku.
+The motivation is to better understand memory behaviour and performance with Node applications - in particular when the memory limit of the machine is reached such as on Heroku.
 
 This allows us to experiments with the following different parameters in the `make run` task (see [Makefile](./Makefile)):
 
@@ -19,7 +19,16 @@ This allows us to experiments with the following different parameters in the `ma
 
 This uses Docker to setup a machine with memory constraints to test.
 
-If VirtualBox and Docker are not already setup on your computer, for the Mac:
+If Docker is not already setup on your computer, for the Mac using [Homebrew](http://brew.sh/):
+
+```sh
+brew install docker docker-machine docker-machine-driver-xhyve
+sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+docker-machine create --driver xhyve dev
+```
+
+or if you're still using the old-skool VirtualBox way:
 
 ```sh
 brew cask install virtualbox
