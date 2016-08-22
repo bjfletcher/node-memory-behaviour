@@ -13,7 +13,7 @@ console.log('Node version: ' + process.version)
 console.log('Current memory usage:')
 console.log(util.inspect(process.memoryUsage()))
 var iterations = process.env.TEST_ITERATIONS || 128
-console.log('Running ' + iterations + ' simulations...')
+console.log('Running ' + iterations + ' memory simulations...')
 
 for (var i = 0; i < iterations; i++) {
 	simulate()
