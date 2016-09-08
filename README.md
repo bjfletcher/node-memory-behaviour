@@ -2,7 +2,7 @@
 
 The motivation is to better understand memory behaviour and performance with Node applications - in particular when the memory limit of the machine is reached such as on Heroku.
 
-This allows us to experiments with the following different parameters in the `make run` task (see [Makefile](./Makefile)):
+This allows us to experiment with the following different parameters in the `make run` task (see [Makefile](./Makefile)):
 
 * Node:
 	* `--max_semi_space_size`
